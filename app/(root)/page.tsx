@@ -44,24 +44,25 @@ const page = async ({
             </p>
           )}
         </div>
-        <div className="mt-6 flex items-center justify-center flex-col gap-3">
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
           {!searchResults?.error &&
             searchResults &&
             searchResults?.items?.map(
               (item: searchResultsTypes, index: number) => (
                 <div
                   key={index}
-                  className="group duration-200 w-full p-3 bg-white hover:bg-slate-900 border border-gray-200 rounded-2xl shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"
+                  className="group duration-200 w-full p-3 bg-[#fffcf2] hover:bg-slate-900 border border-gray-100 rounded-2xl shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"
                 >
-                  <a
-                    href={item?.link}
-                    className="w-fit mb-2 text-2xl line-clamp-1 font-bold text-gray-900 group-hover:text-[#EE2A69] hover:underline underline-offset-4 dark:text-white"
-                    dangerouslySetInnerHTML={{ __html: item?.htmlTitle }}
-                  />
-                  <p
-                    className="text-sm text-gray-500 group-hover:text-slate-300 sm:text-base dark:text-gray-400 line-clamp-3"
-                    dangerouslySetInnerHTML={{ __html: item?.htmlSnippet }}
-                  ></p>
+                  <a href={item?.link}>
+                    <p
+                      className="w-fit mb-2 text-2xl line-clamp-1 font-bold text-gray-900 group-hover:text-[#EE2A69] dark:text-white"
+                      dangerouslySetInnerHTML={{ __html: item?.htmlTitle }}
+                    />
+                    <p
+                      className="text-sm text-gray-500 group-hover:text-slate-300 sm:text-base dark:text-gray-400 line-clamp-2"
+                      dangerouslySetInnerHTML={{ __html: item?.htmlSnippet }}
+                    ></p>
+                  </a>
                 </div>
               )
             )}
