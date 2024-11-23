@@ -18,7 +18,6 @@ const page = async ({
   );
 
   const searchResults = await res.json();
-  console.log(searchResults);
 
   return (
     <>
@@ -51,11 +50,11 @@ const page = async ({
               (item: searchResultsTypes, index: number) => (
                 <div
                   key={index}
-                  className="group duration-200 w-full p-3 bg-[#fffcf2] hover:bg-slate-900 border border-gray-100 rounded-2xl shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"
+                  className="group duration-200 w-full p-4 bg-[#fffcf2] hover:bg-slate-900 border border-gray-100 rounded-2xl shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"
                 >
                   <a href={item?.link} target="_blank">
                     <p
-                      className="w-fit mb-2 text-2xl line-clamp-1 font-bold text-gray-900 group-hover:text-[#EE2A69] dark:text-white"
+                      className="w-fit mb-2 text-xl sm:text-2xl line-clamp-1 font-bold text-gray-900 group-hover:text-[#EE2A69] dark:text-white"
                       dangerouslySetInnerHTML={{ __html: item?.htmlTitle }}
                     />
                     <p
