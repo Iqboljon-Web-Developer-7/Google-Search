@@ -13,9 +13,7 @@ const page = async ({
 }) => {
   const query = (await searchParams).query;
 
-  const res = await fetch(
-    `https://www.googleapis.com/customsearch/v1?key=AIzaSyAvCPFewUgkbMqp7vA_FSelp5L-idicOHk&cx=32071f664483543e0&q=${query}`
-  );
+  const res = await fetch(`${process.env.GOOGLE_SEARCH_API}&q=${query}`);
 
   const searchResults = await res.json();
   console.log("searchResult", searchResults);
