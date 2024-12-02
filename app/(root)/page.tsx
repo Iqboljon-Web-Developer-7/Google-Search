@@ -14,10 +14,11 @@ const page = async ({
   const query = (await searchParams).query;
 
   const res = await fetch(
-    `https://www.googleapis.com/customsearch/v1?key=AIzaSyDo1Lh25PC2X288p6vPT3fnejzURzwqn0I&cx=27e4381a463ba4939&q=${query}`
+    `https://www.googleapis.com/customsearch/v1?key=AIzaSyAvCPFewUgkbMqp7vA_FSelp5L-idicOHk&cx=32071f664483543e0&q=${query}`
   );
 
   const searchResults = await res.json();
+  console.log("searchResult", searchResults);
 
   return (
     <>
@@ -31,8 +32,8 @@ const page = async ({
       <section
         className={`section_container ${searchResults.error && "hidden"}`}
       >
-        <div className="flex items-center justify-between">
-          <p className="text-30-semibold text-slate-700">
+        <div className="flex items-center justify-between flex-col sm:flex-row gap-3">
+          <p className="text-30-semibold text-slate-700 text-center leading-8">
             Search results for{" "}
             <span className="text-[#EE2A69]">&ldquo;{query}&ldquo;</span>
           </p>
@@ -43,7 +44,7 @@ const page = async ({
             </p>
           )}
         </div>
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+        <div className="mt-6 flex items-center justify-center flex-col gap-3">
           {!searchResults?.error &&
             searchResults &&
             searchResults?.items?.map(
