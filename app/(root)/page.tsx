@@ -16,7 +16,6 @@ const page = async ({
   const res = await fetch(`${process.env.GOOGLE_SEARCH_API}&q=${query}`);
 
   const searchResults = await res.json();
-  console.log("searchResult", searchResults);
 
   return (
     <>
