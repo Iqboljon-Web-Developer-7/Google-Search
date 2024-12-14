@@ -48,7 +48,7 @@ const page = async ({
               (item: searchResultsTypes, index: number) => (
                 <div
                   key={index}
-                  className="group duration-200 w-full p-4 bg-[#fffcf2] hover:bg-slate-900 border border-gray-100 rounded-2xl shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"
+                  className="group duration-200 w-full p-4 bg-slate-200 hover:bg-slate-900 border border-gray-100 rounded-2xl shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"
                 >
                   <a href={item?.link} target="_blank">
                     <p
